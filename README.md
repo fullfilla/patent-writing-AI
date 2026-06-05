@@ -2,9 +2,6 @@
 
 这是 `patent-writing-studio` 的一份角色权限版副本，目录如下：
 
-```text
-E:\codex空间\patent-writing-studio-role-auth
-```
 
 这个版本新增了两类用户：
 
@@ -22,11 +19,11 @@ E:\codex空间\patent-writing-studio-role-auth
 
 这个版本不再把草稿只存浏览器本地，而是改成按用户分别保存：
 
-- 用户账号：`E:\codex空间\patent-writing-studio-role-auth\.local\users.json`
-- 登录会话：`E:\codex空间\patent-writing-studio-role-auth\.local\sessions.json`
-- 每个用户的工作区：`E:\codex空间\patent-writing-studio-role-auth\.local\workspaces\`
-- 每个用户的聊天记忆：`E:\codex空间\patent-writing-studio-role-auth\.local\chats\`
-- 全站 API 设置：`E:\codex空间\patent-writing-studio-role-auth\.local\app-settings.json`
+- 用户账号
+- 登录会话
+- 每个用户的工作区
+- 每个用户的聊天记忆
+- 全站 API 设置
 
 ## 运行要求
 
@@ -42,10 +39,6 @@ E:\codex空间\patent-writing-studio-role-auth
 
 1. 打开 PowerShell。
 2. 进入项目目录：
-
-```powershell
-Set-Location 'E:\codex空间\patent-writing-studio-role-auth'
-```
 
 3. 启动网站：
 
@@ -85,7 +78,6 @@ Patent Writing Studio Role Auth is running at http://localhost:3036
 如果你怀疑 3036 端口被旧进程占用了，在项目目录运行：
 
 ```powershell
-Set-Location 'E:\codex空间\patent-writing-studio-role-auth'
 npm run status
 npm run stop
 ```
