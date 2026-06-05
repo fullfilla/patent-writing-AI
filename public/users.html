@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>用户管理 | Patent Writing Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="users">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand-mark" href="/">
+          <span class="brand-badge">PWS</span>
+          <span class="brand-copy">
+            <strong>Patent Writing Studio</strong>
+            <small>专利写作工作台</small>
+          </span>
+        </a>
+        <nav class="nav-pills">
+          <a class="nav-pill" href="/background.html">背景资料</a>
+          <a class="nav-pill" href="/template.html">模板工坊</a>
+          <a class="nav-pill" href="/style.html">风格蒸馏</a>
+          <a class="nav-pill" href="/chat.html">模板搭建器</a>
+          <a class="nav-pill active" href="/users.html">用户管理</a>
+        </nav>
+      </header>
+
+      <main class="page-layout user-admin-layout">
+        <section class="card full-width">
+          <div class="section-head">
+            <div>
+              <p class="section-tag">Admin</p>
+              <h2>用户管理</h2>
+            </div>
+          </div>
+
+          <div id="user-admin-status" class="settings-status">准备就绪。</div>
+
+          <div class="user-admin-grid">
+            <section class="card user-admin-side-card">
+              <details class="fold-panel" open>
+                <summary>密码台账</summary>
+                <div class="fold-panel-body">
+                  <p class="section-note">账号密码会同步写到本地 TXT 文件，管理员可以直接查看。</p>
+                  <div class="context-card">
+                    <strong>当前文件位置</strong>
+                    <p id="user-admin-password-file-path">账号密码.txt</p>
+                  </div>
+                  <a class="ghost-button anchor-button" href="/api/admin/users/passwords.txt" target="_blank" rel="noreferrer">打开账号密码 TXT</a>
+                </div>
+              </details>
+
+              <details class="fold-panel" open>
+                <summary>新建账号</summary>
+                <div class="fold-panel-body">
+                  <div class="form-grid single-column">
+                    <label>
+                      <span>用户名</span>
+                      <input id="user-admin-create-username" class="text-input" placeholder="例如：alice" />
+                    </label>
+                    <label>
+                      <span>显示名</span>
+                      <input id="user-admin-create-display-name" class="text-input" placeholder="例如：Alice 专利助理" />
+                    </label>
+                    <label>
+                      <span>初始密码</span>
+                      <input id="user-admin-create-password" class="text-input" placeholder="至少 8 位" />
+                    </label>
+                    <label>
+                      <span>角色</span>
+                      <select id="user-admin-create-role" class="text-input">
+                        <option value="user">普通用户</option>
+                        <option value="admin">管理员</option>
+                      </select>
+                    </label>
+                  </div>
+                  <button id="user-admin-create-button" class="primary-button" type="button">创建账号</button>
+                </div>
+              </details>
+            </section>
+
+            <section class="card user-admin-main-card">
+              <details class="fold-panel" open>
+                <summary>已有账号</summary>
+                <div class="fold-panel-body">
+                  <div id="user-admin-list" class="admin-users-list"></div>
+                </div>
+              </details>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

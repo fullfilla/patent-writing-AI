@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模板工坊 | Patent Writing Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="template">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand-mark" href="/">
+          <span class="brand-badge">PWS</span>
+          <span class="brand-copy">
+            <strong>Patent Writing Studio</strong>
+            <small>专利写作工作台</small>
+          </span>
+        </a>
+        <nav class="nav-pills">
+          <a class="nav-pill" href="/background.html">背景</a>
+          <a class="nav-pill active" href="/template.html">模板</a>
+          <a class="nav-pill" href="/style.html">蒸馏</a>
+          <a class="nav-pill" href="/chat.html">搭建</a>
+        </nav>
+      </header>
+
+      <main class="page-layout template-workshop-layout">
+        <section class="card form-card full-width template-form-top">
+          <div class="section-head">
+            <div>
+              <p class="section-tag">Template</p>
+              <h2>模板工坊</h2>
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span class="field-head">
+                专利题目
+                <span class="info-tip" tabindex="0">
+                  i
+                  <span class="info-pop">这里只写题目或方案名称，不要把创新点和细节全部塞进来。</span>
+                </span>
+              </span>
+              <input id="topic-title" class="text-input" placeholder="" />
+            </label>
+            <label>
+              <span class="field-head">
+                专利类型
+                <span class="info-tip" tabindex="0">
+                  i
+                  <span class="info-pop">这里只影响默认骨架语气，不决定你的权利范围。</span>
+                </span>
+              </span>
+              <select id="patent-type" class="text-input">
+                <option>发明专利</option>
+                <option>实用新型</option>
+                <option>发明方法</option>
+              </select>
+            </label>
+            <label>
+              <span class="field-head">
+                模板策略
+                <span class="info-tip" tabindex="0">
+                  i
+                  <span class="info-pop">保留空白只留骨架；保留引导会用红字提醒这一部分该写什么。</span>
+                </span>
+              </span>
+              <select id="blank-mode" class="text-input">
+                <option value="blank">保留空白</option>
+                <option value="guided">保留引导</option>
+              </select>
+            </label>
+            <label>
+              <span class="field-head">
+                风格预设
+                <span class="info-tip" tabindex="0">
+                  i
+                  <span class="info-pop">模板搭建器只管结构；这里决定措辞偏稳、偏专利或偏说明书风格。</span>
+                </span>
+              </span>
+              <select id="template-style-preset" class="text-input"></select>
+            </label>
+          </div>
+
+          <details class="fold-panel" open>
+            <summary>模板来源选择</summary>
+            <div class="fold-panel-body">
+              <div class="form-grid">
+                <label>
+                  <span class="field-head">
+                    模板来源
+                    <span class="info-tip" tabindex="0">
+                      i
+                      <span class="info-pop">大师模板 = 模板 + 风格；搭建器模板 = 只有模板；手动上传 = 严格按上传骨架走。</span>
+                    </span>
+                  </span>
+                  <select id="template-source-type" class="text-input">
+                    <option value="default">系统默认模板</option>
+                    <option value="master">大师模板（模板 + 风格）</option>
+                    <option value="builder">模板搭建器保存模板（只有模板）</option>
+                    <option value="uploaded">手动上传模板</option>
+                  </select>
+                </label>
+                <label>
+                  <span class="field-head">
+                    选择大师模板
+                    <span class="info-tip" tabindex="0">
+                      i
+                      <span class="info-pop">选中后，会优先遵循该大师模板的标题顺序、段落顺序和风格骨架。</span>
+                    </span>
+                  </span>
+                  <select id="selected-master-template-id" class="text-input"></select>
+                </label>
+                <label class="full-span">
+                  <span class="field-head">
+                    选择搭建器模板
+                    <span class="info-tip" tabindex="0">
+                      i
+                      <span class="info-pop">这里选的是你在模板搭建器里保存的结构模板，不带写作风格。</span>
+                    </span>
+                  </span>
+                  <select id="selected-builder-template-id" class="text-input"></select>
+                </label>
+              </div>
+              <div id="template-source-note" class="settings-status" data-tone="neutral">
+                选中模板后，生成时会优先遵循它的标题顺序、段落顺序和占位逻辑。
+              </div>
+            </div>
+          </details>
+
+          <details class="template-source-panel fold-panel" open>
+            <summary>手动上传模板</summary>
+            <div class="fold-panel-body">
+              <div class="template-rule-card">
+                <strong>文件要求</strong>
+                <ul>
+                  <li>支持 `.txt`、`.md`、`.html`、`.docx`。</li>
+                  <li>如果你手里是 `.doc`，请先另存为 `.docx` 后上传。</li>
+                  <li>单个文件不超过 `10 MB`。</li>
+                  <li>尽量保留标题、编号、段落序号、步骤号和原有换行。</li>
+                  <li>如果要生成严格底稿，模板里最好直接写出固定格式句式。</li>
+                </ul>
+              </div>
+              <div class="action-row file-action-row">
+                <button id="template-file-button" class="ghost-button" type="button">选择文件</button>
+                <span id="template-file-name" class="file-picker-name">未选择任何文件</span>
+                <input
+                  id="template-file-input"
+                  class="sr-only-file-input"
+                  type="file"
+                  accept=".txt,.md,.markdown,.text,.html,.htm,.docx"
+                  aria-label="上传模板文件"
+                />
+                <button id="template-clear-button" class="ghost-button" type="button">清空模板</button>
+              </div>
+              <div id="template-file-status" class="settings-status" data-tone="neutral">
+                当前还没有上传模板，将使用系统默认模板。
+              </div>
+              <label class="full-span">
+                <span class="field-head">
+                  模板正文
+                  <span class="info-tip" tabindex="0">
+                    i
+                    <span class="info-pop">这里放的是模板骨架，不是具体创新点。建议保留标题、编号和占位提示。</span>
+                  </span>
+                </span>
+                <textarea
+                  id="template-source-text"
+                  class="text-area"
+                  placeholder=""
+                ></textarea>
+              </label>
+            </div>
+          </details>
+
+          <div class="action-row file-action-row">
+            <button id="template-button" class="primary-button" type="button">生成模板底稿</button>
+            <a class="ghost-button anchor-button" href="/chat.html">去模板搭建器</a>
+          </div>
+        </section>
+
+        <section class="card output-card full-width template-preview-card">
+          <div class="section-head">
+            <div>
+              <p class="section-tag">Draft</p>
+              <h2>模板底稿</h2>
+            </div>
+            <button class="mini-button" data-copy-target="template-output" type="button">复制</button>
+          </div>
+
+          <details class="fold-panel">
+            <summary>当前选择说明</summary>
+            <div class="fold-panel-body">
+              <div id="template-context" class="context-stack"></div>
+            </div>
+          </details>
+
+          <div id="template-output" class="output-block empty-state">
+            生成后，这里会以双页 A4 底稿形式显示模板骨架；引导模式下，引导文字会用红色显示。
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patent Writing Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="home">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand-mark" href="/">
+          <span class="brand-badge">PWS</span>
+          <span class="brand-copy">
+            <strong>Patent Writing Studio</strong>
+            <small>专利写作工作台</small>
+          </span>
+        </a>
+        <nav class="nav-pills">
+          <a class="nav-pill" href="/style.html">蒸馏</a>
+          <a class="nav-pill" href="/background.html">背景</a>
+          <a class="nav-pill" href="/template.html">模板</a>
+          <a class="nav-pill" href="/chat.html">搭建</a>
+        </nav>
+      </header>
+
+      <main class="home-layout">
+        <section class="hero hero-single">
+          <div class="hero-copy">
+            <p class="eyebrow">Patent Writing Studio</p>
+            <h1>先搭模板，再写专利。</h1>
+            <p class="hero-text">四步完成：蒸馏、背景、模板、搭建。</p>
+            <div class="hero-actions">
+              <a class="primary-button anchor-button" href="/background.html">去背景</a>
+              <a class="ghost-button anchor-button" href="/template.html">去模板</a>
+              <a class="ghost-button anchor-button" href="/chat.html">去搭建</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="card card-grid">
+          <article class="feature-card">
+            <p class="section-tag">Page 1</p>
+            <h2>风格蒸馏</h2>
+            <p class="section-note">整理代理师样本、结构偏好、句式习惯和实施例铺陈方式。</p>
+            <a class="text-link" href="/style.html">进入这一页</a>
+          </article>
+
+          <article class="feature-card">
+            <p class="section-tag">Page 2</p>
+            <h2>背景资料</h2>
+            <p class="section-note">输出相关论文创新点与方法步骤，以及相关专利创新点、方法流程和权利要求焦点。</p>
+            <a class="text-link" href="/background.html">进入这一页</a>
+          </article>
+
+          <article class="feature-card">
+            <p class="section-tag">Page 3</p>
+            <h2>模板工坊</h2>
+            <p class="section-note">上传现成模板，或者把前面沉淀的风格与背景揉成可继续填写的模板底稿。</p>
+            <a class="text-link" href="/template.html">进入这一页</a>
+          </article>
+
+          <article class="feature-card">
+            <p class="section-tag">Page 4</p>
+            <h2>模板搭建器</h2>
+            <p class="section-note">用标题模块、内容模块、段落模块拖拽出一张 A4 模板页，并同步到模板工坊。</p>
+            <a class="text-link" href="/chat.html">进入这一页</a>
+          </article>
+        </section>
+
+        <section class="card status-card">
+          <div class="section-head">
+            <div>
+              <p class="section-tag">Workspace</p>
+              <h2>当前工作区状态</h2>
+            </div>
+          </div>
+          <div id="workspace-overview" class="status-grid"></div>
+          <p id="disclaimer" class="disclaimer">
+            这里更适合做“专利底稿生产线”：先把论文和专利的创新点、流程和权利要求看清，再让模板去约束生成内容。
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

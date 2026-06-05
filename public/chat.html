@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模板搭建器 | Patent Writing Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="builder">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand-mark" href="/">
+          <span class="brand-badge">PWS</span>
+          <span class="brand-copy">
+            <strong>Patent Writing Studio</strong>
+            <small>专利写作工作台</small>
+          </span>
+        </a>
+        <nav class="nav-pills">
+          <a class="nav-pill" href="/background.html">背景资料</a>
+          <a class="nav-pill" href="/template.html">模板工坊</a>
+          <a class="nav-pill" href="/style.html">风格蒸馏</a>
+          <a class="nav-pill active" href="/chat.html">模板搭建器</a>
+        </nav>
+      </header>
+
+      <main class="page-layout builder-workbench">
+        <section class="card builder-sidebar">
+          <div class="section-head">
+            <div>
+              <p class="section-tag">Builder</p>
+              <h2>模板搭建器</h2>
+            </div>
+          </div>
+
+          <label>
+            <span>模板名称</span>
+            <input id="builder-template-name" class="text-input" placeholder="" />
+          </label>
+
+          <div class="settings-status" id="builder-status">先从下方模块库里添加模块，再在左侧继续细调。</div>
+
+          <details class="fold-panel" open>
+            <summary>模块库</summary>
+            <div class="fold-panel-body">
+              <div class="builder-tool-list" id="builder-tool-list">
+                <button class="builder-tool" type="button" draggable="true" data-builder-tool="heading">
+                  <strong>标题模块</strong>
+                  <span>适合章节名、二级标题、封面标题。</span>
+                </button>
+                <button class="builder-tool" type="button" draggable="true" data-builder-tool="sentence">
+                  <strong>内容模块</strong>
+                  <span>适合说明这一节要写什么、覆盖哪些点。</span>
+                </button>
+                <button class="builder-tool" type="button" draggable="true" data-builder-tool="paragraph">
+                  <strong>段落模块</strong>
+                  <span>自动从 [0000] 开始编号，适合说明书正文占位。</span>
+                </button>
+              </div>
+            </div>
+          </details>
+
+          <details class="fold-panel" open>
+            <summary>当前模块设置</summary>
+            <div class="fold-panel-body">
+              <div id="builder-settings-panel" class="context-stack"></div>
+            </div>
+          </details>
+
+          <details class="fold-panel">
+            <summary>已保存搭建器模板</summary>
+            <div class="fold-panel-body">
+              <div id="builder-saved-templates" class="context-stack"></div>
+            </div>
+          </details>
+        </section>
+
+        <section class="card builder-stage">
+          <div class="section-head">
+            <div>
+              <p class="section-tag">Canvas</p>
+              <h2>模板画布</h2>
+            </div>
+            <a class="ghost-button anchor-button" href="/template.html">去模板工坊</a>
+          </div>
+
+          <div class="builder-paper-frame builder-paper-frame-large">
+            <div class="builder-paper-meta">A4 模板画布</div>
+            <div id="builder-canvas" class="builder-canvas-stack builder-paper"></div>
+          </div>
+
+          <div class="action-row">
+            <button id="builder-save-button" class="primary-button" type="button">保存模板</button>
+            <button id="builder-sync-button" class="ghost-button" type="button">保存并同步到模板工坊</button>
+            <button id="builder-clear-button" class="ghost-button" type="button">清空画布</button>
+          </div>
+
+          <details class="fold-panel" open>
+            <summary>
+              <span>模板预览</span>
+              <button class="mini-button" data-copy-target="builder-preview" type="button">复制</button>
+            </summary>
+            <div class="fold-panel-body">
+              <div id="builder-preview" class="output-block"># 我的可视化模板</div>
+            </div>
+          </details>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

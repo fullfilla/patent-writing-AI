@@ -1,0 +1,7 @@
+.local/
+node_modules/
+*.log
+*.pid
+账号密码.txt
+__pycache__/
+*.pyc

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>背景资料 | Patent Writing Studio</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="background">
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand-mark" href="/">
+          <span class="brand-badge">PWS</span>
+          <span class="brand-copy">
+            <strong>Patent Writing Studio</strong>
+            <small>专利写作工作台</small>
+          </span>
+        </a>
+        <nav class="nav-pills">
+          <a class="nav-pill active" href="/background.html">背景</a>
+          <a class="nav-pill" href="/template.html">模板</a>
+          <a class="nav-pill" href="/style.html">蒸馏</a>
+          <a class="nav-pill" href="/chat.html">搭建</a>
+        </nav>
+      </header>
+
+      <main class="page-layout background-layout">
+        <section class="card compact-search-card full-width">
+          <div class="section-head compact-search-head">
+            <div>
+              <p class="section-tag">Background</p>
+              <h2>背景资料</h2>
+            </div>
+          </div>
+          <div class="search-inline-bar">
+            <label class="search-inline-field">
+              <input
+                id="source-query"
+                class="text-input"
+                placeholder=""
+              />
+            </label>
+            <button id="background-button" class="primary-button compact-search-button" type="button">
+              搜索
+            </button>
+          </div>
+        </section>
+
+        <section class="card output-card full-width background-results-card">
+          <div class="section-head">
+            <div>
+              <p class="section-tag">Structured Output</p>
+              <h2>检索与整理结果</h2>
+            </div>
+            <button class="mini-button" data-copy-target="background-output" type="button">复制整理稿</button>
+          </div>
+
+          <div class="background-panel-grid background-panel-grid-compact">
+            <article class="background-panel background-panel-wide">
+              <div class="background-panel-head">
+                <p class="section-tag">Common Practice</p>
+                <h3>这个领域通常怎么做</h3>
+              </div>
+              <div id="background-common-practice" class="background-panel-body empty-state">
+                这里会解释这个领域常见方案通常怎么做，以及每个部分一般负责什么。
+              </div>
+            </article>
+
+            <article class="background-panel">
+              <div class="background-panel-head">
+                <p class="section-tag">Paper Routes</p>
+                <h3>相关论文路线</h3>
+              </div>
+              <div id="background-paper-results" class="background-panel-body empty-state">
+                这里会列出相关论文的方法路线和创新点。
+              </div>
+            </article>
+
+            <article class="background-panel">
+              <div class="background-panel-head">
+                <p class="section-tag">Patent Routes</p>
+                <h3>相关专利路线</h3>
+              </div>
+              <div id="background-patent-results" class="background-panel-body empty-state">
+                这里会列出相关专利的方法、创新点和对应权利焦点。
+              </div>
+            </article>
+
+            <article class="background-panel background-panel-wide">
+              <div class="background-panel-head">
+                <p class="section-tag">Pain Points</p>
+                <h3>可直接写进背景技术的常见问题</h3>
+              </div>
+              <div id="background-pain-points" class="background-panel-body empty-state">
+                这里会整理这个领域常见问题、局限和不足。
+              </div>
+            </article>
+          </div>
+
+          <div class="background-output-wrap">
+            <div class="section-head">
+              <div>
+                <p class="section-tag">Summary Draft</p>
+                <h3>可复制整理稿</h3>
+              </div>
+            </div>
+            <div id="background-output" class="output-block empty-state">
+              搜索后，这里会生成一份可直接复制的背景资料整理稿。
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
