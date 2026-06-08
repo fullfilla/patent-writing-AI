@@ -1,165 +1,215 @@
 # Patent Writing Studio Role Auth
 
-涓€涓湰鍦颁紭鍏堢殑涓撳埄 LLM 鍐欎綔宸ヤ綔鍙帮紝鐢ㄤ簬鎶娾€滆祫鏂欐绱€侀鏍兼矇娣€銆佽儗鏅祫鏂欐暣鐞嗐€佹ā鏉跨敓鎴愩€佹ā鏉挎惌寤恒€佽处鍙锋潈闄愮鐞嗏€濅覆鎴愪竴鏉″彲婕旂ず鐨勪笓鍒╂挵鍐欒緟鍔╂祦绋嬨€?
-杩欎釜椤圭洰鍩轰簬 `patent-writing-studio` 鍘熷瀷鎵╁睍浜嗙櫥褰曚綋绯诲拰瑙掕壊鏉冮檺锛?
-- `admin` 绠＄悊鍛橈細鍙娇鐢ㄥ叏閮ㄥ啓浣滃姛鑳斤紝鍙鐞嗙敤鎴疯处鍙凤紝鍙煡鐪嬪拰淇敼鍏ㄧ珯 API 璁剧疆銆?- `user` 鏅€氱敤鎴凤細鍙娇鐢ㄩ鏍艰捀棣忋€佽儗鏅祫鏂欍€佹ā鏉垮伐鍧婂拰妯℃澘鎼缓鍣紝浣嗕笉鑳芥煡鐪嬫垨淇敼 API 璁剧疆锛屼篃涓嶈兘绠＄悊鍏朵粬璐﹀彿銆?
-## 椤圭洰鎴浘
+一个本地优先的专利 LLM 写作工作台，用于把“资料检索、风格沉淀、背景资料整理、模板生成、模板搭建、账号权限管理”串成一条可演示的专利撰写辅助流程。
 
-### 棣栭〉涓庡伐浣滃尯姒傝
+这个项目基于 `patent-writing-studio` 原型扩展了登录体系和角色权限：
 
-![棣栭〉涓庡伐浣滃尯姒傝](docs/screenshots-small/01-home.jpg)
+- `admin` 管理员：可使用全部写作功能，可管理用户账号，可查看和修改全站 API 设置。
+- `user` 普通用户：可使用风格蒸馏、背景资料、模板工坊和模板搭建器，但不能查看或修改 API 设置，也不能管理其他账号。
 
-### 鑳屾櫙璧勬枡
+## 项目截图
 
-![鑳屾櫙璧勬枡](docs/screenshots-small/02-background.jpg)
+### 首页与工作区概览
 
-### 椋庢牸钂搁
+![首页与工作区概览](docs/screenshots/01-home.png)
 
-![椋庢牸钂搁](docs/screenshots-small/03-style.jpg)
+### 背景资料
 
-### 妯℃澘宸ュ潑
+![背景资料](docs/screenshots/02-background.png)
 
-![妯℃澘宸ュ潑](docs/screenshots-small/04-template.jpg)
+### 风格蒸馏
 
-### 妯℃澘鎼缓鍣?
-![妯℃澘鎼缓鍣╙(docs/screenshots-small/05-builder.jpg)
+![风格蒸馏](docs/screenshots/03-style.png)
 
-### 鐢ㄦ埛绠＄悊
+### 模板工坊
 
-![鐢ㄦ埛绠＄悊](docs/screenshots-small/06-users.jpg)
+![模板工坊](docs/screenshots/04-template.png)
 
-## 鏍稿績鍔熻兘
+### 模板搭建器
 
-1. 椋庢牸钂搁
+![模板搭建器](docs/screenshots/05-builder.png)
 
-   鏍规嵁浠ｇ悊甯堟垨绀轰緥涓撳埄鏂囨湰锛屾彁鍙栫粨鏋勫亸濂姐€佸彞寮忕壒寰併€佸疄鏂芥柟寮忛摵闄堜範鎯拰鏉冨埄瑕佹眰琛ㄨ揪鍊惧悜锛屽舰鎴愬悗缁ā鏉跨敓鎴愬彲澶嶇敤鐨勯鏍肩敾鍍忋€?
-2. 鑳屾櫙璧勬枡鐢熸垚
+### 用户管理
 
-   鍥寸粫鎶€鏈富棰樻暣鐞嗙浉鍏宠鏂囧垱鏂扮偣銆佹柟娉曟楠ゃ€佷笓鍒╃嚎绱€佹潈鍒╄姹傚叧娉ㄧ偣鍜屽畼鏂规绱㈠叆鍙ｏ紝杈呭姪鐢ㄦ埛鍏堟瀯寤虹幇鏈夋妧鏈鐭ワ紝鍐嶈繘鍏ユ挵鍐欍€?
-3. 妯℃澘宸ュ潑
+![用户管理](docs/screenshots/06-users.png)
 
-   灏嗕富棰樸€佽儗鏅祫鏂欍€侀鏍肩敾鍍忓拰鍙€変笂浼犳ā鏉胯瀺鍚堬紝鐢熸垚甯︾暀鐧戒綅鐨勪笓鍒╁簳绋挎ā鏉匡紝鏂逛究缁х画琛ュ厖鎶€鏈柟妗堛€佸疄鏂戒緥鍜屾潈鍒╄姹傘€?
-4. 妯℃澘鎼缓鍣?
-   鎻愪緵妯″潡鍖栫殑 A4 妯℃澘缂栬緫鐣岄潰锛屽彲鐢ㄦ爣棰樸€佹钀姐€佸唴瀹瑰潡绛夋ā鍧楁惌寤烘ā鏉块〉闈紝骞跺悓姝ュ埌妯℃澘宸ュ潑銆?
-5. LLM 鎺ュ叆
+## 核心功能
 
-   鏀寔 OpenAI 鍏煎鐨?`chat/completions` 鎺ュ彛閰嶇疆锛屽寘鎷?API Key銆丅ase URL 鍜?Model銆傛湭閰嶇疆妯″瀷鏃讹紝绯荤粺鍙洖閫€鍒版湰鍦拌鍒欑敓鎴愶紝淇濊瘉婕旂ず娴佺▼涓嶄腑鏂€?
-6. 瑙掕壊鏉冮檺涓庢湰鍦版暟鎹殧绂?
-   绠＄悊鍛樹笌鏅€氱敤鎴锋潈闄愬垎绂伙紱鐢ㄦ埛銆佷細璇濄€佸伐浣滃尯銆佽亰澶╄褰曞拰 API 璁剧疆淇濆瓨鍦ㄩ」鐩湰鍦?`.local/` 鐩綍涓€傝鐩綍宸茶 `.gitignore` 鎺掗櫎锛屼笉浼氫笂浼犲埌 GitHub銆?
-## 鎶€鏈爤
+1. 风格蒸馏
 
-- Node.js 鍘熺敓 HTTP 鏈嶅姟锛氳礋璐ｉ潤鎬侀〉闈€丄PI 璺敱銆佺櫥褰曚細璇濆拰鏈湴鏂囦欢瀛樺偍銆?- 鍘熺敓 JavaScript 鍓嶇锛氬椤甸潰宸ヤ綔鍙帮紝鏃犲墠绔瀯寤烘楠わ紝渚夸簬鏈湴杩愯鍜岄潰璇曟紨绀恒€?- Node.js Test Runner锛氫娇鐢?`node --test` 杩涜妯″潡绾ф祴璇曘€?- GSAP锛氱敤浜庡墠绔氦浜掑姩鐢汇€?- Python/PowerShell 杈呭姪鑴氭湰锛氱敤浜?Word 妯℃澘瑙ｆ瀽鍜屾棫鐗?`.doc` 鍒?`.docx` 鐨勮浆鎹㈡祦绋嬨€?
-## 鐩綍缁撴瀯
+   根据代理师或示例专利文本，提取结构偏好、句式特征、实施方式铺陈习惯和权利要求表达倾向，形成后续模板生成可复用的风格画像。
+
+2. 背景资料生成
+
+   围绕技术主题整理相关论文创新点、方法步骤、专利线索、权利要求关注点和官方检索入口，辅助用户先构建现有技术认知，再进入撰写。
+
+3. 模板工坊
+
+   将主题、背景资料、风格画像和可选上传模板融合，生成带留白位的专利底稿模板，方便继续补充技术方案、实施例和权利要求。
+
+4. 模板搭建器
+
+   提供模块化的 A4 模板编辑界面，可用标题、段落、内容块等模块搭建模板页面，并同步到模板工坊。
+
+5. LLM 接入
+
+   支持 OpenAI 兼容的 `chat/completions` 接口配置，包括 API Key、Base URL 和 Model。未配置模型时，系统可回退到本地规则生成，保证演示流程不中断。
+
+6. 角色权限与本地数据隔离
+
+   管理员与普通用户权限分离；用户、会话、工作区、聊天记录和 API 设置保存在项目本地 `.local/` 目录中。该目录已被 `.gitignore` 排除，不会上传到 GitHub。
+
+## 技术栈
+
+- Node.js 原生 HTTP 服务：负责静态页面、API 路由、登录会话和本地文件存储。
+- 原生 JavaScript 前端：多页面工作台，无前端构建步骤，便于本地运行和面试演示。
+- Node.js Test Runner：使用 `node --test` 进行模块级测试。
+- GSAP：用于前端交互动画。
+- Python/PowerShell 辅助脚本：用于 Word 模板解析和旧版 `.doc` 到 `.docx` 的转换流程。
+
+## 目录结构
 
 ```text
 patent-writing-studio-role-auth/
-鈹溾攢 public/                  # 鍓嶇椤甸潰銆佹牱寮忓拰娴忚鍣ㄧ閫昏緫
-鈹溾攢 src/                     # 鍚庣涓氬姟妯″潡
-鈹? 鈹溾攢 ai-orchestrator.js     # LLM 澧炲己缂栨帓
-鈹? 鈹溾攢 background-generator.js# 鑳屾櫙璧勬枡鐢熸垚
-鈹? 鈹溾攢 chat-engine.js         # 妯℃澘鎼缓鍣ㄥ璇濋€昏緫
-鈹? 鈹溾攢 llm-client.js          # OpenAI 鍏煎鎺ュ彛瀹㈡埛绔?鈹? 鈹溾攢 style-distiller.js     # 椋庢牸钂搁
-鈹? 鈹溾攢 template-engine.js     # 涓撳埄妯℃澘鐢熸垚
-鈹? 鈹溾攢 user-store.js          # 鐢ㄦ埛銆佸瘑鐮併€佷細璇濆拰鏉冮檺
-鈹? 鈹斺攢 workspace-store.js     # 鎸夌敤鎴烽殧绂荤殑宸ヤ綔鍖?鈹溾攢 tests/                   # 鑷姩鍖栨祴璇?鈹溾攢 scripts/                 # 绔彛绠＄悊鍜屾枃妗ｈВ鏋愯剼鏈?鈹溾攢 docs/screenshots/        # 鍘熷椤甸潰鍔熻兘鎴浘
-鈹溾攢 docs/screenshots-small/  # README 灞曠ず鐢ㄥ帇缂╂埅鍥?鈹溾攢 server.js                # Node HTTP 鏈嶅姟鍏ュ彛
-鈹溾攢 package.json             # 椤圭洰鑴氭湰鍜屼緷璧?鈹斺攢 README.md
+├─ public/                  # 前端页面、样式和浏览器端逻辑
+├─ src/                     # 后端业务模块
+│  ├─ ai-orchestrator.js     # LLM 增强编排
+│  ├─ background-generator.js# 背景资料生成
+│  ├─ chat-engine.js         # 模板搭建器对话逻辑
+│  ├─ llm-client.js          # OpenAI 兼容接口客户端
+│  ├─ style-distiller.js     # 风格蒸馏
+│  ├─ template-engine.js     # 专利模板生成
+│  ├─ user-store.js          # 用户、密码、会话和权限
+│  └─ workspace-store.js     # 按用户隔离的工作区
+├─ tests/                   # 自动化测试
+├─ scripts/                 # 端口管理和文档解析脚本
+├─ docs/screenshots/        # 页面功能截图
+├─ server.js                # Node HTTP 服务入口
+├─ package.json             # 项目脚本和依赖
+└─ README.md
 ```
 
-## 鏈湴杩愯
+## 本地运行
 
-杩愯鍓嶉渶瑕佸畨瑁咃細
+运行前需要安装：
 
 - Windows PowerShell
 - Node.js 20+
-- 娴忚鍣?
-`npm` 鏄?Node.js 鑷甫鐨勫寘绠＄悊鍛戒护锛岀敤鏉ュ畨瑁呬緷璧栧拰鎵ц椤圭洰鑴氭湰銆?
-1. 杩涘叆椤圭洰鐩綍锛?
+- 浏览器
+
+`npm` 是 Node.js 自带的包管理命令，用来安装依赖和执行项目脚本。
+
+1. 进入项目目录：
+
 ```powershell
-Set-Location 'E:\codex绌洪棿\patent-writing-studio-role-auth'
+Set-Location 'E:\codex空间\patent-writing-studio-role-auth'
 ```
 
-2. 瀹夎渚濊禆锛?
+2. 安装依赖：
+
 ```powershell
 npm install
 ```
 
-3. 鍚姩鏈嶅姟锛?
+3. 启动服务：
+
 ```powershell
 npm start
 ```
 
-姝ｅ父杈撳嚭绫讳技锛?
+正常输出类似：
+
 ```text
 Patent Writing Studio Role Auth is running at http://localhost:3036
 ```
 
-4. 鎵撳紑娴忚鍣ㄨ闂細
+4. 打开浏览器访问：
 
 ```text
 http://localhost:3036
 ```
 
-5. 鍋滄鏈嶅姟锛?
-濡傛灉褰撳墠 PowerShell 姝ｅ湪杩愯 `npm start`锛屾寜 `Ctrl + C`銆?
-濡傛灉鎬€鐤?3036 绔彛琚棫杩涚▼鍗犵敤锛屽湪椤圭洰鐩綍杩愯锛?
+5. 停止服务：
+
+如果当前 PowerShell 正在运行 `npm start`，按 `Ctrl + C`。
+
+如果怀疑 3036 端口被旧进程占用，在项目目录运行：
+
 ```powershell
 npm run status
 npm run stop
 ```
 
-## 榛樿婕旂ず璐﹀彿
+## 默认演示账号
 
 ```text
-绠＄悊鍛橈細admin / Admin@123456
-鏅€氱敤鎴凤細writer / User@123456
+管理员：admin / Admin@123456
+普通用户：writer / User@123456
 ```
 
-寤鸿棣栨鐧诲綍鍚庝慨鏀归粯璁ゅ瘑鐮併€傞潰璇曟垨鍏紑婕旂ず鏃跺缓璁鏄庯細杩欐槸鏈湴婕旂ず璐﹀彿锛岀湡瀹為儴缃叉椂搴旀敼鎴愮幆澧冨彉閲忋€佹暟鎹簱銆佸姞瀵嗗瘑閽ュ拰鏇翠弗鏍肩殑閴存潈绛栫暐銆?
-## 椤甸潰鍏ュ彛
+建议首次登录后修改默认密码。面试或公开演示时建议说明：这是本地演示账号，真实部署时应改成环境变量、数据库、加密密钥和更严格的鉴权策略。
 
-- 棣栭〉锛歚http://localhost:3036/`
-- 鑳屾櫙璧勬枡锛歚http://localhost:3036/background.html`
-- 椋庢牸钂搁锛歚http://localhost:3036/style.html`
-- 妯℃澘宸ュ潑锛歚http://localhost:3036/template.html`
-- 妯℃澘鎼缓鍣細`http://localhost:3036/chat.html`
-- 鐢ㄦ埛绠＄悊锛歚http://localhost:3036/users.html`
+## 页面入口
 
-璇存槑锛?
-- 鏃х増鈥滄绱㈠悜瀵尖€濆凡缁忓苟鍏?`鑳屾櫙璧勬枡`銆?- 鏃х増鈥滄櫤鑳藉姪鎵嬧€濆凡缁忔敼鎴?`妯℃澘鎼缓鍣╜銆?
-## API 璁剧疆
+- 首页：`http://localhost:3036/`
+- 背景资料：`http://localhost:3036/background.html`
+- 风格蒸馏：`http://localhost:3036/style.html`
+- 模板工坊：`http://localhost:3036/template.html`
+- 模板搭建器：`http://localhost:3036/chat.html`
+- 用户管理：`http://localhost:3036/users.html`
 
-鍙湁绠＄悊鍛樺彲浠ユ墦寮€鍙充笂瑙掔殑 `API` 璁剧疆锛?
-- `API Key`锛氭ā鍨嬪钩鍙板瘑閽ャ€?- `Base URL`锛歄penAI 鍏煎鎺ュ彛鍦板潃锛屼緥濡?`https://api.openai.com/v1`銆?- `Model`锛氭ā鍨嬪悕绉般€?
-閰嶇疆浼氫繚瀛樺湪 `.local/app-settings.json`锛屼笉浼氭彁浜ゅ埌 GitHub銆傛櫘閫氱敤鎴峰彧鑳戒娇鐢ㄥ啓浣滃姛鑳斤紝涓嶈兘鐪嬪埌鏁忔劅閰嶇疆銆?
-## 鏁版嵁闅旂
+说明：
 
-杩欎釜鐗堟湰涓嶅啀鎶婅崏绋垮彧瀛樻祻瑙堝櫒鏈湴锛岃€屾槸鏀规垚鎸夌敤鎴峰垎鍒繚瀛橈細
+- 旧版“检索向导”已经并入 `背景资料`。
+- 旧版“智能助手”已经改成 `模板搭建器`。
 
-- 鐢ㄦ埛璐﹀彿
-- 鐧诲綍浼氳瘽
-- 姣忎釜鐢ㄦ埛鐨勫伐浣滃尯
-- 姣忎釜鐢ㄦ埛鐨勮亰澶╄蹇?- 鍏ㄧ珯 API 璁剧疆
+## API 设置
 
-杩欎簺杩愯鏁版嵁淇濆瓨鍦?`.local/` 鐩綍涓紝骞跺凡琚?`.gitignore` 鎺掗櫎銆?
-## 娴嬭瘯
+只有管理员可以打开右上角的 `API` 设置：
+
+- `API Key`：模型平台密钥。
+- `Base URL`：OpenAI 兼容接口地址，例如 `https://api.openai.com/v1`。
+- `Model`：模型名称。
+
+配置会保存在 `.local/app-settings.json`，不会提交到 GitHub。普通用户只能使用写作功能，不能看到敏感配置。
+
+## 数据隔离
+
+这个版本不再把草稿只存浏览器本地，而是改成按用户分别保存：
+
+- 用户账号
+- 登录会话
+- 每个用户的工作区
+- 每个用户的聊天记忆
+- 全站 API 设置
+
+这些运行数据保存在 `.local/` 目录中，并已被 `.gitignore` 排除。
+
+## 测试
 
 ```powershell
 npm test
 ```
 
-褰撳墠娴嬭瘯瑕嗙洊锛?
-- 鑳屾櫙璧勬枡鐢熸垚
-- 鑱婂ぉ鐘舵€佸拰涓婁紶鏂囦欢鎽樿
-- LLM 杩斿洖 JSON 瑙ｆ瀽
-- API 璁剧疆褰掍竴鍖?- 椋庢牸钂搁
-- 妯℃澘鐢熸垚
-- 鐢ㄦ埛銆佸瘑鐮佸拰鏉冮檺
-- 宸ヤ綔鍖烘暟鎹綊涓€鍖?
-## 瀹夊叏璇存槑
+当前测试覆盖：
 
-- `.local/`銆乣node_modules/`銆佹棩蹇楁枃浠躲€丳ID 鏂囦欢銆佽处鍙峰瘑鐮佹枃鏈枃浠堕兘宸插姞鍏?`.gitignore`銆?- GitHub 浠撳簱鍙繚瀛樻簮鐮併€佹祴璇曘€佺ず渚嬫暟鎹拰鍔熻兘鎴浘銆?- 褰撳墠椤圭洰鏄湰鍦颁紭鍏堝師鍨嬶紝涓嶅缓璁洿鎺ユ毚闇插埌鍏綉鐢熶骇鐜銆?
-## 闈㈣瘯璁茶В
+- 背景资料生成
+- 聊天状态和上传文件摘要
+- LLM 返回 JSON 解析
+- API 设置归一化
+- 风格蒸馏
+- 模板生成
+- 用户、密码和权限
+- 工作区数据归一化
 
-闈㈣瘯璁茶В绋胯锛?
+## 安全说明
+
+- `.local/`、`node_modules/`、日志文件、PID 文件、账号密码文本文件都已加入 `.gitignore`。
+- GitHub 仓库只保存源码、测试、示例数据和功能截图。
+- 当前项目是本地优先原型，不建议直接暴露到公网生产环境。
+
+## 面试讲解
+
+面试讲解稿见：
+
 [docs/interview-guide.md](docs/interview-guide.md)
