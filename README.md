@@ -11,27 +11,27 @@
 
 ### 首页与工作区概览
 
-![首页与工作区概览](docs/screenshots/01-home.png)
+![首页与工作区概览](docs/screenshots-small/01-home.jpg)
 
 ### 背景资料
 
-![背景资料](docs/screenshots/02-background.png)
+![背景资料](docs/screenshots-small/02-background.jpg)
 
 ### 风格蒸馏
 
-![风格蒸馏](docs/screenshots/03-style.png)
+![风格蒸馏](docs/screenshots-small/03-style.jpg)
 
 ### 模板工坊
 
-![模板工坊](docs/screenshots/04-template.png)
+![模板工坊](docs/screenshots-small/04-template.jpg)
 
 ### 模板搭建器
 
-![模板搭建器](docs/screenshots/05-builder.png)
+![模板搭建器](docs/screenshots-small/05-builder.jpg)
 
 ### 用户管理
 
-![用户管理](docs/screenshots/06-users.png)
+![用户管理](docs/screenshots-small/06-users.jpg)
 
 ## 核心功能
 
@@ -83,7 +83,8 @@ patent-writing-studio-role-auth/
 │  └─ workspace-store.js     # 按用户隔离的工作区
 ├─ tests/                   # 自动化测试
 ├─ scripts/                 # 端口管理和文档解析脚本
-├─ docs/screenshots/        # 页面功能截图
+├─ docs/screenshots/        # 原始页面功能截图
+├─ docs/screenshots-small/  # README 展示用压缩截图
 ├─ server.js                # Node HTTP 服务入口
 ├─ package.json             # 项目脚本和依赖
 └─ README.md
