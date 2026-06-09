@@ -19,7 +19,7 @@
 
 ### 风格蒸馏
 
-![风格蒸馏](docs/screenshots-small/03-style.jpg)
+
 
 ### 模板工坊
 
