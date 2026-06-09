@@ -208,9 +208,3 @@ npm test
 - `.local/`、`node_modules/`、日志文件、PID 文件、账号密码文本文件都已加入 `.gitignore`。
 - GitHub 仓库只保存源码、测试、示例数据和功能截图。
 - 当前项目是本地优先原型，不建议直接暴露到公网生产环境。
-
-## 面试讲解
-
-面试讲解稿见：
-
-[docs/interview-guide.md](docs/interview-guide.md)
