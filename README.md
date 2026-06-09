@@ -15,7 +15,7 @@
 
 ### 背景资料
 
-![背景资料](docs/screenshots-small/02-background.jpg)
+
 
 ### 风格蒸馏
 
